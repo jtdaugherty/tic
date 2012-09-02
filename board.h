@@ -2,6 +2,11 @@
 #ifndef __BOARD_H__
 #define __BOARD_H__
 
+/**
+ * Game board data structure and manipulation functions, including
+ * tests for wins, stalemates, move placement, and board inspection.
+ */
+
 enum piece {
     PIECE_NONE,
     PIECE_X,
