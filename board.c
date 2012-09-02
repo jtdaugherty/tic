@@ -7,7 +7,7 @@
 
 struct board* new_board(int dim)
 {
-    struct board * b;
+    struct board *b;
 
     b = malloc(sizeof(struct board));
     if (b == NULL)
