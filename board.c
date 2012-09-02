@@ -88,16 +88,16 @@ int find_win_diagonal(struct board *b, struct win *w)
     }
 
     // Check second diagonal (top right to bottom left)
-    p = get(b, b->dim - 1, 0);
-    for (i = b->dim - 2; i >= 0; i--) // row
-        for (j = 1; j < b->dim; j++) // column
-            if (get(b, i, j) != p)
-                p = PIECE_NONE;
+    p = get(b, b->dim - 1, 0); // Start with bottom left board cell
+    for (i = b->dim - 2, j = 1; i >= 0 && j < b->dim; i--, j++) {
+        if (get(b, i, j) != p)
+            p = PIECE_NONE;
+    }
 
     if (p != PIECE_NONE) {
         w->winning_piece = p;
         w->type = WIN_DIAGONAL;
-        w->which = 0;
+        w->which = 1;
         return 0;
     }
 
