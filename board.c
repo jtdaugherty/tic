@@ -142,7 +142,7 @@ int find_win_column(struct board *b, struct win *w)
         if (p != PIECE_NONE) {
             w->winning_piece = p;
             w->type = WIN_COLUMN;
-            w->which = j;
+            w->which = i;
             return 0;
         }
     }
