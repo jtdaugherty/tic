@@ -1,0 +1,4 @@
+
+This is a toy project I'm using to learn/explore OpenGL APIs.  The
+project implements a primitive version of Tic Tac Toe and is intended
+to be compiled on OS X.
