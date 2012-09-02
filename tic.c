@@ -211,8 +211,9 @@ void handleKey(unsigned char key, int x, int y)
         break;
         ;;
     case ' ':
-        place(state.board, state.selector_row, state.selector_col, state.current_player);
-        state.current_player = state.current_player == PIECE_X ? PIECE_O : PIECE_X;
+        if (place(state.board, state.selector_row, state.selector_col, state.current_player) == 0) {
+            state.current_player = state.current_player == PIECE_X ? PIECE_O : PIECE_X;
+        }
         break;
         ;;
     }
