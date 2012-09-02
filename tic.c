@@ -7,9 +7,10 @@
 #include "board.h"
 #include "geometry.h"
 
+GLuint boardDim = 5;
 GLdouble cameraRadius = 3.0;
-GLdouble cameraHeight = 5.0;
-GLfloat cellSpacing = 0.05;
+GLdouble cameraHeight = 7.0;
+GLfloat cellSpacing = 0.02;
 
 GLubyte none_color[] = { 100, 100, 100 };
 GLubyte x_color[] = { 0, 100, 0 };
@@ -50,7 +51,7 @@ int getVertexBaseIndex(int x, int y)
 
 void createBoard(void)
 {
-    state.board = new_board(3);
+    state.board = new_board(boardDim);
 
     createBoardGeometry(state.board->dim,
                         cellSpacing,
