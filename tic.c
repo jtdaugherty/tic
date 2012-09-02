@@ -188,27 +188,37 @@ void updatePresentation()
     }
 }
 
+int clamp(int input, int min_bound, int max_bound)
+{
+    if (input < min_bound)
+        input = min_bound;
+
+    if (input > max_bound)
+        input = max_bound;
+
+    return input;
+}
+
 void handleKey(unsigned char key, int x, int y)
 {
     struct win *w;
+    int _min = 0, _max = state.board->dim - 1;
 
     switch (key) {
     case 'w':
-        state.selector_row = (state.selector_row == 0 ? 0 : state.selector_row - 1);
+        state.selector_row = clamp(state.selector_row - 1, _min, _max);
         break;
         ;;
     case 's':
-        state.selector_row = (state.selector_row == state.board->dim - 1 ?
-                              state.board->dim - 1 : state.selector_row + 1);
+        state.selector_row = clamp(state.selector_row + 1, _min, _max);
         break;
         ;;
     case 'a':
-        state.selector_col = (state.selector_col == 0 ? 0 : state.selector_col - 1);
+        state.selector_col = clamp(state.selector_col - 1, _min, _max);
         break;
         ;;
     case 'd':
-        state.selector_col = (state.selector_col == state.board->dim - 1 ?
-                              state.board->dim - 1 : state.selector_col + 1);
+        state.selector_col = clamp(state.selector_col + 1, _min, _max);
         break;
         ;;
     case ' ':
