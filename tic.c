@@ -10,7 +10,7 @@
 GLuint boardDim = 5;
 GLdouble cameraRadius = 3.0;
 GLdouble cameraHeight = 7.0;
-GLfloat cellSpacing = 0.02;
+GLfloat cellSpacing = 0.05;
 
 GLubyte none_color[] = { 100, 100, 100 };
 GLubyte x_color[] = { 0, 100, 0 };
