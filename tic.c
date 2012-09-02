@@ -292,27 +292,4 @@ int main(int argc, char **argv)
     glutMainLoop();
 
     return 0;
-
-/*     struct board *b = new_board(3); */
-/*     struct win *w; */
-
-/*     place(b, 0, 0, PIECE_X); */
-/*     place(b, 0, 1, PIECE_X); */
-/*     place(b, 0, 2, PIECE_X); */
-
-/*     w = find_win(b); */
-/*     if (w != NULL) { */
-/*         printf("Win!\n"); */
-/*         printf("Player %s won on %s %d\n", */
-/*                w->winning_piece == PIECE_X ? "X" : "O", */
-/*                w->type == WIN_DIAGONAL ? "diagonal" : w->type == WIN_ROW ? "row" : "column", */
-/*                w->which); */
-/*         free_win(w); */
-/*     } else { */
-/*         printf("No win\n"); */
-/*     } */
-
-/*     reset(b); */
-
-/*     return 0; */
 }
